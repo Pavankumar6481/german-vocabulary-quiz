@@ -1,246 +1,38 @@
-import streamlit as st
-import random
-from german_words_with_examples_filled import german_words
+CORRECTIONS FOR app.py
 
-st.set_page_config(
-    page_title="German Vocabulary Quiz",
-    page_icon="🇩🇪"
-)
+1) Fix wrong_gifs:
+Add a comma after:
 
-st.title("🇩🇪 German Vocabulary Quiz")
+"https://media.giphy.com/media/3o6ZtaO9BZHcOjmErm/giphy.gif",
 
-# ---------------- SESSION STATES ----------------
+2) Paste this block ABOVE 'if submitted:':
 
-if "score" not in st.session_state:
-    st.session_state.score = 0
+# ---------------- QUIZ ----------------
 
-if "show_next" not in st.session_state:
-    st.session_state.show_next = False
+word = st.session_state.word
 
-if "remaining_words" not in st.session_state:
-    st.session_state.remaining_words = list(german_words.keys())
+word_info = german_words[word]
 
-if "word" not in st.session_state:
-    st.session_state.word = random.choice(
-        st.session_state.remaining_words
-    )
-    st.session_state.remaining_words.remove(
-        st.session_state.word
-    )
+correct_answer = word_info['meanings']
+example_de = word_info['example_de']
+example_en = word_info['example_en']
 
-# ---------------- MESSAGES ----------------
+st.header(word)
 
-correct_messages = [
-    "Sehr gut! 🇩🇪",
-    "Bro actually got one right 😭",
-    "Impossible. Did you use your brain today? 🧠",
-    "The German embassy is impressed... for now 🇩🇪",
-    "Plot twist: You knew this word 😱",
-    "The Goethe examiner shed a tear of happiness 😭",
-    "Ladies and gentlemen... he can be taught 🎓",
-    "Bro remembered the word instead of guessing 💀",
-    "The Duolingo owl has cancelled the hitman 🦉",
-    "Germany is one step closer 🚀",
-    "Even I didn't expect that one 😭",
-    "B2 Warrior unlocked ⚔️",
-    "That answer was suspiciously correct 🤨",
-    "The word fears you now 😈",
-    "Big brain moment 🧠✨",
-    "Bro beat the allegations 😭",
-    "You cooked 🔥",
-    "One small step for German, one giant step for your visa 🇩🇪",
-    "The visa officer nodded approvingly 📄",
-    "Damn, okay Einstein 😎",
-    "You dropped this 👑",
-    "Character development arc is real 📈",
-    "Bro might actually survive in Germany 😂",
-    "A rare moment of intelligence has been detected 🚨",
-    "This answer increased your IQ by 0.5 points 📈",
-    "Duolingo owl is reluctantly proud of you 😤",
-    "Achievement unlocked: Not Completely Lost 🏆",
-    "You remembered a German word. Miracles do happen 😭",
-    "Germany just moved 1 cm closer to you 🇩🇪",
-    "Main character energy detected ✨"
-]
-
-wrong_gifs = [
-    "https://media.giphy.com/media/l3q2K5jinAlChoCLS/giphy.gif",
-    "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif",
-    "https://media.giphy.com/media/10JhviFuU2gWD6/giphy.gif",
-    "https://media.giphy.com/media/3o6ZtaO9BZHcOjmErm/giphy.gif"
-    "https://media.giphy.com/media/11mwI67GLeMvgA/giphy.gif",
-    "https://media.giphy.com/media/26n6WywJyh39n1pBu/giphy.gif",
-    "https://media.giphy.com/media/3o7TKsQ8UQ3P5rjJ8A/giphy.gif",
-    "https://media.giphy.com/media/3orieYJ5E6MBrv0YSI/giphy.gif",
-    "https://media.giphy.com/media/14uQ3cOFteDaU/giphy.gif",
-    "https://media.giphy.com/media/13CoXDiaCcCoyk/giphy.gif",
-    "https://media.giphy.com/media/5xtDarIN81U0KvlnzKo/giphy.gif",
-    "https://media.giphy.com/media/l4FGpP4lxGGgK5CBW/giphy.gif"
-]
-
-wrong_messages = [
-    "Kyu nahi ho rahe padhaye 😭",
-    "Germany jaake kya bologe bhai? 😂",
-    "Bhai, Goethe examiner is watching you 👀",
-    "Duolingo owl has booked your flight back to India ✈️",
-    "Aaj vocabulary ki vaat lag gayi 😭",
-    "Bro, B2 certificate won't print itself 😭",
-    "The word just filed a complaint against you 📄",
-    "Your German teacher fainted after seeing this answer 💀",
-    "Even Google Translate is disappointed 😔",
-    "At this rate you'll order Schnitzel in English 😭",
-    "The visa officer just raised an eyebrow 🤨",
-    "Padh le bhai, time nahi hai!!",
-    "This word will come in the exam now because you got it wrong 😈",
-    "The word is laughing at you right now 😂",
-    "Bro got humbled by one German word 💀",
-    "Nah, this is actually diabolical 😭",
-    "The A2 certificate is slowly disappearing... 📜",
-    "Bro is fighting for his life against vocabulary 💀",
-    "Skill issue 🗿",
-    "September is approaching faster than your German 😭",
-    "The German embassy saw this and closed your file 😭",
-    "Bhai, even ChatGPT can't defend this answer 😭",
-    "One more mistake and Duolingo owl is outside your house 🦉",
-    "The word said 'nice try' 😂",
-    "German language: 1 | You: 0 😭",
-    "This wasn't even close bro 💀",
-    "Wake up babe, another wrong answer just dropped 😭",
-    "Achievement unlocked: Confidently Incorrect 🏆",
-    "The examiner wrote 'interesting attempt' on your paper 😭",
-    "Bhai, this answer belongs in a museum 🏛️",
-    "Mission failed successfully 😭",
-    "Your keyboard typed faster than your brain today 😂",
-    "That answer had more confidence than correctness 😭",
-    "Plot twist: the word had a different meaning 😈",
-    "The German word just hit you with a critical attack ⚔️",
-    "Your German level has left the chat 🚪",
-    "Bro, even the word is confused by your answer 😭",
-    "This answer deserves a standing ovation... for comedy 😂",
-    "Bhai, revise this one before it revises you 😭",
-    "The vocabulary gods are disappointed today ⚡"
-]
-
-boss_messages = [
-    "💀 Goethe Examiner Boss Fight Started!",
-    "💀 Visa Officer Appeared!",
-    "💀 German Grammar Demon Spawned!",
-    "💀 Duolingo Owl Final Form Unlocked!",
-    "💀 B2 Certificate has left the chat!",
-    "💀 German Boss Music Starts Playing...",
-    "💀 You have encountered the Final Exam!"
-]
-
-# ---------------- PROGRESS ----------------
-
-total_words = len(german_words)
-progress = st.session_state.score / total_words
-
-st.progress(progress)
-st.write(
-    f"Score: {st.session_state.score} / {total_words}"
-)
-
-if submitted:
-
-    user_answer = answer.strip().lower()
-
-    accepted_answers = [
-        meaning.strip().lower()
-        for meaning in correct_answer
-    ]
-
-    if user_answer in accepted_answers:
-
-        st.success(
-            random.choice(correct_messages)
+if st.button("📖 Show Example Sentence"):
+    if example_de:
+        st.info(example_de)
+        st.info(example_en)
+    else:
+        st.warning(
+            "No example sentence available yet."
         )
 
-        st.session_state.score += 1
+with st.form("quiz_form"):
+    answer = st.text_input(
+        "Enter the English meaning:"
+    )
 
-    else:
-
-        chance = random.randint(1, 100)
-
-        if chance <= 70:
-            st.error(random.choice(wrong_messages))
-            st.write(
-                "Accepted answers: "
-                + ", ".join(correct_answer)
-            )
-
-        elif chance <= 90:
-
-            text_col, gif_col = st.columns([3, 2])
-
-            with text_col:
-                st.error(
-                    random.choice(wrong_messages)
-                )
-
-                st.write(
-                    "Accepted answers: "
-                    + ", ".join(correct_answer)
-                )
-
-            with gif_col:
-                st.image(
-                    random.choice(wrong_gifs),
-                    width=250
-                )
-
-        elif chance <= 95:
-            st.snow()
-            st.error(
-                random.choice(wrong_messages)
-            )
-
-        elif chance <= 99:
-            st.balloons()
-            st.error(
-                random.choice(wrong_messages)
-            )
-
-        else:
-            st.error(
-                random.choice(boss_messages)
-            )
-
-            st.warning(
-                "The Duolingo owl has arrived at your location 💀"
-            )
-
-    st.session_state.show_next = True
-
-if st.session_state.show_next:
-
-    if st.button("Next Word ➡️"):
-
-        if len(
-            st.session_state.remaining_words
-        ) == 0:
-
-            st.balloons()
-            st.success(
-                "Congratulations! You completed all the words! 🎉"
-            )
-
-        else:
-
-            st.session_state.word = random.choice(
-                st.session_state.remaining_words
-            )
-
-            st.session_state.remaining_words.remove(
-                st.session_state.word
-            )
-
-            st.session_state.show_next = False
-            st.rerun()
-
-# ---------------- RESTART ----------------
-
-if st.button("🔄 Restart Quiz"):
-
-    st.session_state.clear()
-    st.rerun()
+    submitted = st.form_submit_button(
+        "Check"
+    )
