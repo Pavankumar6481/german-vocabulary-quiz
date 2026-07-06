@@ -35,6 +35,16 @@ correct_messages = [
     "Main character energy detected ✨"
 ]
 
+good_gifs = [
+    "https://media.giphy.com/media/111ebonMs90YLu/giphy.gif",
+    "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif",
+    "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif",
+    "https://media.giphy.com/media/ely3apij36BJhoZ234/giphy.gif",
+    "https://media.giphy.com/media/5GoVLqeAOo6PK/giphy.gif",
+    "https://media.giphy.com/media/3oz8xAFtqoOUUrsh7W/giphy.gif",
+    "https://media.giphy.com/media/1BdIPBW9J2R4Q/giphy.gif"
+]
+
 wrong_messages = [
     "Kyu nahi ho rahe padhaye 😭",
     "Germany jaake kya bologe bhai? 😂",
@@ -45,29 +55,32 @@ wrong_messages = [
 ]
 
 wrong_gifs = [
-    "https://media.giphy.com/media/l3q2K5jinAlChoCLS/giphy.gif",
-    "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif",
-    "https://media.giphy.com/media/10JhviFuU2gWD6/giphy.gif",
-    "https://media.giphy.com/media/3o6ZtaO9BZHcOjmErm/giphy.gif",
-    "https://media.giphy.com/media/11mwI67GLeMvgA/giphy.gif",
-     "https://media.giphy.com/media/l3q2K5jinAlChoCLS/giphy.gif",
     "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif",
     "https://media.giphy.com/media/10JhviFuU2gWD6/giphy.gif",
     "https://media.giphy.com/media/3o6ZtaO9BZHcOjmErm/giphy.gif",
     "https://media.giphy.com/media/11mwI67GLeMvgA/giphy.gif",
     "https://media.giphy.com/media/26n6WywJyh39n1pBu/giphy.gif",
-    "https://media.giphy.com/media/3o7TKsQ8UQ3P5rjJ8A/giphy.gif",
-    "https://media.giphy.com/media/3orieYJ5E6MBrv0YSI/giphy.gif",
     "https://media.giphy.com/media/14uQ3cOFteDaU/giphy.gif",
-    "https://media.giphy.com/media/13CoXDiaCcCoyk/giphy.gif",
-    "https://media.giphy.com/media/5xtDarIN81U0KvlnzKo/giphy.gif",
-    "https://media.giphy.com/media/l4FGpP4lxGGgK5CBW/giphy.gif"
+    "https://media.giphy.com/media/13CoXDiaCcCoyk/giphy.gif"
 ]
 
 boss_messages = [
     "💀 Goethe Examiner Boss Fight Started!",
     "💀 Visa Officer Appeared!",
     "💀 Duolingo Owl Final Form Unlocked!"
+]
+
+legendary_rewards = [
+    "🏆 +100 Aura",
+    "🇩🇪 Visa Officer Approval +1",
+    "⚔️ German Warrior Badge",
+    "📚 Infinite Vocabulary Buff",
+    "👑 Main Character Energy",
+    "🦉 Duolingo Owl Friendship",
+    "🍺 Free Imaginary German Beer",
+    "🎓 Goethe Examiner Respect +10",
+    "🚀 German Level Increased",
+    "💰 Scholarship Luck +5"
 ]
 
 # ---------------- PROGRESS ----------------
@@ -91,7 +104,7 @@ st.header(word)
 if st.button("📖 Show Example Sentence"):
     if example_de:
         st.info(example_de)
-        st.info(example_en)
+        #st.info(example_en)
     else:
         st.warning("No example sentence available yet.")
 
@@ -108,13 +121,28 @@ if submitted:
         for meaning in correct_answer
     ]
 
-    if user_answer in accepted_answers:
+if user_answer in accepted_answers:
 
-        st.success(random.choice(correct_messages))
+    st.success(
+        random.choice(correct_messages)
+    )
+
         st.session_state.score += 1
-
+    
+        # SUPER RARE EVENT
+        if random.randint(1, 50) == 1:
+    
+            st.image(
+                random.choice(good_gifs),
+                width=350
+            )
+    
+            st.success(
+                f"LEGENDARY DROP: {random.choice(legendary_rewards)}"
+            )
+    
         if st.session_state.score in [10, 50, 100]:
-            st.balloons()
+            pass
 
     else:
 
