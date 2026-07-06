@@ -185,7 +185,7 @@ else:
                 "The Duolingo owl has arrived at your location 💀"
             )
 
-    st.session_state.show_next = True
+st.session_state.show_next = True
 
 # ---------------- NEXT WORD ----------------
 
