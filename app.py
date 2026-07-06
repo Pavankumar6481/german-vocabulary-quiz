@@ -32,15 +32,35 @@ if "word" not in st.session_state:
 
 correct_messages = [
     "Sehr gut! 🇩🇪",
+    "Bro actually got one right 😭",
+    "Impossible. Did you use your brain today? 🧠",
+    "The German embassy is impressed... for now 🇩🇪",
+    "Plot twist: You knew this word 😱",
+    "The Goethe examiner shed a tear of happiness 😭",
+    "Ladies and gentlemen... he can be taught 🎓",
+    "Bro remembered the word instead of guessing 💀",
+    "The Duolingo owl has cancelled the hitman 🦉",
     "Germany is one step closer 🚀",
-    "Bhai, Goethe examiner smiled 😊",
-    "The visa officer approves this answer ✅",
-    "Duolingo owl is proud of you 🦉",
+    "Even I didn't expect that one 😭",
     "B2 Warrior unlocked ⚔️",
-    "This word fears you now 😎",
-    "You cooked! 🔥",
-    "German proficiency +1 📈",
-    "Fluent German arc has begun 🇩🇪"
+    "That answer was suspiciously correct 🤨",
+    "The word fears you now 😈",
+    "Big brain moment 🧠✨",
+    "Bro beat the allegations 😭",
+    "You cooked 🔥",
+    "One small step for German, one giant step for your visa 🇩🇪",
+    "The visa officer nodded approvingly 📄",
+    "Damn, okay Einstein 😎",
+    "You dropped this 👑",
+    "Character development arc is real 📈",
+    "Bro might actually survive in Germany 😂",
+    "A rare moment of intelligence has been detected 🚨",
+    "This answer increased your IQ by 0.5 points 📈",
+    "Duolingo owl is reluctantly proud of you 😤",
+    "Achievement unlocked: Not Completely Lost 🏆",
+    "You remembered a German word. Miracles do happen 😭",
+    "Germany just moved 1 cm closer to you 🇩🇪",
+    "Main character energy detected ✨"
 ]
 
 wrong_messages = [
@@ -57,7 +77,33 @@ wrong_messages = [
     "The visa officer just raised an eyebrow 🤨",
     "Padh le bhai, time nahi hai!!",
     "This word will come in the exam now because you got it wrong 😈",
-    "The word is laughing at you right now 😂"
+    "The word is laughing at you right now 😂",
+    "Bro got humbled by one German word 💀",
+    "Nah, this is actually diabolical 😭",
+    "The A2 certificate is slowly disappearing... 📜",
+    "Bro is fighting for his life against vocabulary 💀",
+    "Skill issue 🗿",
+    "September is approaching faster than your German 😭",
+    "The German embassy saw this and closed your file 😭",
+    "Bhai, even ChatGPT can't defend this answer 😭",
+    "One more mistake and Duolingo owl is outside your house 🦉",
+    "The word said 'nice try' 😂",
+    "German language: 1 | You: 0 😭",
+    "This wasn't even close bro 💀",
+    "Wake up babe, another wrong answer just dropped 😭",
+    "Achievement unlocked: Confidently Incorrect 🏆",
+    "The examiner wrote 'interesting attempt' on your paper 😭",
+    "Bhai, this answer belongs in a museum 🏛️",
+    "Mission failed successfully 😭",
+    "Your keyboard typed faster than your brain today 😂",
+    "That answer had more confidence than correctness 😭",
+    "Plot twist: the word had a different meaning 😈",
+    "The German word just hit you with a critical attack ⚔️",
+    "Your German level has left the chat 🚪",
+    "Bro, even the word is confused by your answer 😭",
+    "This answer deserves a standing ovation... for comedy 😂",
+    "Bhai, revise this one before it revises you 😭",
+    "The vocabulary gods are disappointed today ⚡"
 ]
 
 # ---------------- PROGRESS ----------------
@@ -85,7 +131,7 @@ st.header(word)
 if st.button("📖 Show Example Sentence"):
     if example_de:
         st.info(example_de)
-        st.info(example_en)
+        
     else:
         st.warning(
             "No example sentence available yet."
