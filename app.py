@@ -55,7 +55,7 @@ wrong_messages = [
     "Even Google Translate is disappointed 😔",
     "At this rate you'll order Schnitzel in English 😭",
     "The visa officer just raised an eyebrow 🤨",
-    "Padh le bhai, September is coming 🇩🇪",
+    "Padh le bhai, time nahi hai!!",
     "This word will come in the exam now because you got it wrong 😈",
     "The word is laughing at you right now 😂"
 ]
