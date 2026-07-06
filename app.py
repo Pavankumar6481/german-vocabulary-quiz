@@ -103,7 +103,7 @@ wrong_messages = [
     "The vocabulary gods are disappointed today ⚡"
 ]
 
-good_gifs = [
+#good_gifs = [
     "https://media.giphy.com/media/111ebonMs90YLu/giphy.gif",
     "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif",
     "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif",
@@ -112,7 +112,7 @@ good_gifs = [
     "https://media.giphy.com/media/3oz8xAFtqoOUUrsh7W/giphy.gif",
     "https://media.giphy.com/media/1BdIPBW9J2R4Q/giphy.gif"
 ]
-bad_gifs = [
+#bad_gifs = [
     "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif",
     "https://media.giphy.com/media/10JhviFuU2gWD6/giphy.gif",
     "https://media.giphy.com/media/3o6ZtaO9BZHcOjmErm/giphy.gif",
@@ -151,7 +151,7 @@ st.header(word)
 if st.button("📖 Show Example Sentence"):
     if example_de:
         st.info(example_de)
-        st.info(example_en)
+        #st.info(example_en)
     else:
         st.warning("No example sentence available yet.")
 
