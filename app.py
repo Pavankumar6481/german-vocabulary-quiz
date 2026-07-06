@@ -49,7 +49,19 @@ wrong_gifs = [
     "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif",
     "https://media.giphy.com/media/10JhviFuU2gWD6/giphy.gif",
     "https://media.giphy.com/media/3o6ZtaO9BZHcOjmErm/giphy.gif",
-    "https://media.giphy.com/media/11mwI67GLeMvgA/giphy.gif"
+    "https://media.giphy.com/media/11mwI67GLeMvgA/giphy.gif",
+     "https://media.giphy.com/media/l3q2K5jinAlChoCLS/giphy.gif",
+    "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif",
+    "https://media.giphy.com/media/10JhviFuU2gWD6/giphy.gif",
+    "https://media.giphy.com/media/3o6ZtaO9BZHcOjmErm/giphy.gif",
+    "https://media.giphy.com/media/11mwI67GLeMvgA/giphy.gif",
+    "https://media.giphy.com/media/26n6WywJyh39n1pBu/giphy.gif",
+    "https://media.giphy.com/media/3o7TKsQ8UQ3P5rjJ8A/giphy.gif",
+    "https://media.giphy.com/media/3orieYJ5E6MBrv0YSI/giphy.gif",
+    "https://media.giphy.com/media/14uQ3cOFteDaU/giphy.gif",
+    "https://media.giphy.com/media/13CoXDiaCcCoyk/giphy.gif",
+    "https://media.giphy.com/media/5xtDarIN81U0KvlnzKo/giphy.gif",
+    "https://media.giphy.com/media/l4FGpP4lxGGgK5CBW/giphy.gif"
 ]
 
 boss_messages = [
