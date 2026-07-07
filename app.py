@@ -184,34 +184,25 @@ if submitted:
 
     if correct:
     
-        st.success(random.choice(correct_messages))
-        st.session_state.score += 1
-    
-        if good_gifs:
-            st.image(
-                random.choice(good_gifs),
-                width=350
-            )
-            st.success(
-                f"LEGENDARY DROP: {random.choice(legendary_rewards)}"
-            )
+            st.success(random.choice(correct_messages))
+            st.session_state.score += 1
+            
+            if good_gifs:
+                st.image(
+                    random.choice(good_gifs),
+                    width=350
+                )
     
     else:
     
-            chance = random.randint(1, 100)
-    
-            if chance <= 70:
-                st.error(random.choice(wrong_messages))
-                st.write("Accepted answers: " + ", ".join(correct_answer))
-    
-            elif chance <= 90:
-                left, right = st.columns([3, 2])
-                with left:
-                    st.error(random.choice(wrong_messages))
-                    st.write("Accepted answers: " + ", ".join(correct_answer))
-                with right:
-                    if bad_gifs:
-                        st.image(random.choice(bad_gifs), width=250)
+        st.error(random.choice(wrong_messages))
+        st.write("Accepted answers: " + ", ".join(correct_answer))
+                
+        if bad_gifs:
+            st.image(
+                random.choice(bad_gifs),
+                width=250
+            )
     
             elif chance <= 95:
                 st.error(random.choice(wrong_messages))
