@@ -3,6 +3,13 @@ import random
 from rapidfuzz import fuzz
 from german_words_with_examples_filled import german_words
 
+st.set_page_config(
+    page_title="German Vocabulary Quiz",
+    page_icon="🇩🇪"
+)
+
+st.title("DE German Vocabulary Quiz")
+
 if "score" not in st.session_state:
     st.session_state.score = 0
 if "show_next" not in st.session_state:
