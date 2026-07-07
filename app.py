@@ -163,24 +163,23 @@ with st.form("quiz_form"):
 if submitted:
 
     user_answer = answer.strip().lower()
-    accepted_answers = [m.strip().lower() for m in correct_answer]
+    accepted_answers = [
+        m.strip().lower() 
+        for m in correct_answer
+    ]
 
+    correct = False
 
+    for ans in accepted_answers:
 
-correct = False
-
-for ans in accepted_answers:
-
-    ans = ans.lower().strip()
-
-    if (
-        user_answer == ans
-        or user_answer.rstrip("s") == ans
-        or ans.rstrip("s") == user_answer
-        or fuzz.ratio(user_answer, ans) >= 80
-    ):
-        correct = True
-        break
+        if (
+            user_answer == ans
+            or user_answer.rstrip("s") == ans
+            or ans.rstrip("s") == user_answer
+            or fuzz.ratio(user_answer, ans) >= 80
+        ):
+            correct = True
+            break
 
 
 if correct:
@@ -205,7 +204,7 @@ if correct:
             st.error(random.choice(wrong_messages))
             st.write("Accepted answers: " + ", ".join(correct_answer))
 
-        elif chance <= 95:
+        elif chance <= 90:
             left, right = st.columns([3, 2])
             with left:
                 st.error(random.choice(wrong_messages))
