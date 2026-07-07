@@ -1,5 +1,6 @@
 import streamlit as st
 import random
+from rapidfuzz import fuzz
 from german_words_with_examples_filled import german_words
 
 st.set_page_config(page_title="German Vocabulary Quiz", page_icon="🇩🇪")
@@ -164,14 +165,37 @@ if submitted:
     user_answer = answer.strip().lower()
     accepted_answers = [m.strip().lower() for m in correct_answer]
 
-    if user_answer in accepted_answers:
 
-        st.success(random.choice(correct_messages))
-        st.session_state.score += 1
 
-        if good_gifs and random.randint(1, 2) == 1:
-            st.image(random.choice(good_gifs), width=350)
-            st.success(f"LEGENDARY DROP: {random.choice(legendary_rewards)}")
+correct = False
+
+for ans in accepted_answers:
+
+    ans = ans.lower().strip()
+
+    if (
+        user_answer == ans
+        or user_answer.rstrip("s") == ans
+        or ans.rstrip("s") == user_answer
+        or fuzz.ratio(user_answer, ans) >= 80
+    ):
+        correct = True
+        break
+
+
+if correct:
+
+    st.success(random.choice(correct_messages))
+    st.session_state.score += 1
+
+    if good_gifs and random.randint(1, 5) == 1:
+        st.image(
+            random.choice(good_gifs),
+            width=350
+        )
+        st.success(
+            f"LEGENDARY DROP: {random.choice(legendary_rewards)}"
+        )
 
     else:
 
