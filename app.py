@@ -102,32 +102,32 @@ wrong_messages = [
 ]
 
 good_gifs = [
-    "gifs/good/good1.gif",
-    "gifs/good/good2.gif",
-    "gifs/good/good3.gif",
-    "gifs/good/good4.gif",
-    "gifs/good/good5.gif",
-    "gifs/good/good6.gif",
-    "gifs/good/good7.gif",
-    "gifs/good/good8.gif",
-    "gifs/good/good9.gif",
-    "gifs/good/good10.gif",
-    "gifs/good/good11.gif"
+    # "gifs/good/good1.gif",
+    # "gifs/good/good2.gif",
+    # "gifs/good/good3.gif",
+    # "gifs/good/good4.gif",
+    # "gifs/good/good5.gif",
+    # "gifs/good/good6.gif",
+    # "gifs/good/good7.gif",
+    # "gifs/good/good8.gif",
+    # "gifs/good/good9.gif",
+    # "gifs/good/good10.gif",
+    # "gifs/good/good11.gif"
 ]
 bad_gifs = [
-    "gifs/bad/bad1.gif",
-    "gifs/bad/bad2.gif",
-    "gifs/bad/bad3.gif",
-    "gifs/bad/bad4.gif",
-    "gifs/bad/bad5.gif",
-    "gifs/bad/bad6.gif",
-    "gifs/bad/bad7.gif",
-    "gifs/bad/bad8.gif",
-    "gifs/bad/bad9.gif",
-    "gifs/bad/bad10.gif",
-    "gifs/bad/bad11.gif",
-    "gifs/bad/bad12.gif",
-    "gifs/bad/bad13.gif"
+    # "gifs/bad/bad1.gif",
+    # "gifs/bad/bad2.gif",
+    # "gifs/bad/bad3.gif",
+    # "gifs/bad/bad4.gif",
+    # "gifs/bad/bad5.gif",
+    # "gifs/bad/bad6.gif",
+    # "gifs/bad/bad7.gif",
+    # "gifs/bad/bad8.gif",
+    # "gifs/bad/bad9.gif",
+    # "gifs/bad/bad10.gif",
+    # "gifs/bad/bad11.gif",
+    # "gifs/bad/bad12.gif",
+    # "gifs/bad/bad13.gif"
 ]
 
 boss_messages = [
