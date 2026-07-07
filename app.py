@@ -19,7 +19,7 @@ correct_messages = [
     "Germany is one step closer 🚀",
     "B2 Warrior unlocked ⚔️",
     "You cooked 🔥",
-    "Main character energy detected ✨"
+    "Main character energy detected ✨",
     "Sehr gut! 🇩🇪",
     "Bro actually got one right 😭",
     "Impossible. Did you use your brain today? 🧠",
@@ -176,9 +176,9 @@ if submitted:
             st.session_state.score += 1
             
             if good_gifs:
-                st.image(
-                    random.choice(good_gifs),
-                    width=350
+                        gif = random.choice(good_gifs)
+                        st.write("GOOD:", gif)
+                        st.image(gif, width=350)
                 )
                 st.success(
                     f"LEGENDARY DROP: {random.choice(legendary_rewards)}"
@@ -190,9 +190,9 @@ if submitted:
         st.write("Accepted answers: " + ", ".join(correct_answer))
                 
         if bad_gifs:
-            st.image(
-                random.choice(bad_gifs),
-                width=250
+             gif = random.choice(bad_gifs)
+             st.write("BAD:", gif)
+             st.image(gif, width=250)
             )
     
     st.session_state.show_next = True
