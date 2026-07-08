@@ -305,7 +305,4 @@ german_words = {
     'verschaffen': {'meanings': ['obtain', 'provide', 'secure', 'procure']},
     'vortragen': {'meanings': ['present', 'deliver', 'lecture', 'report']},
     'wahrnehmen': {'meanings': ['perceive', 'notice', 'attend', 'recognize']},
-    'wechseln': {'meanings': ['change', 'switch', 'exchange', 'replace']},
-    'weiterentwickeln': {'meanings': ['develop further', 'improve', 'advance', 'enhance']},
-    'zeichnen': {'meanings': ['draw', 'sign', 'mark', 'illustrate']},
 }
