@@ -158,8 +158,8 @@ st.write(f"Score: {st.session_state.score} / {total_words}")
 word = st.session_state.word
 word_info = german_words[word]
 correct_answer = word_info["meanings"]
-example_de = word_info["example_de"]
-example_en = word_info["example_en"]
+example_de = word_info.get("example_de")
+example_en = word_info.get("example_en")
 
 st.header(word)
 
